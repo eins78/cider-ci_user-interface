@@ -5,7 +5,9 @@
 - commits ||= @commits
 - link_params ||= @link_params
 
-- cache [@link_params,@commits_cache_signatures_array] do |cache_tag|
+- cs= [@link_params,@commits_cache_signatures_array]
+
+- cache cs do |cache_tag|
 
   #reload-page.executions-page{data: {cache_tag: cache_tag, reload_timeout: 3}}
 

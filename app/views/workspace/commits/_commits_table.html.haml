@@ -5,11 +5,10 @@
 - commits ||= @commits
 - link_params ||= @link_params
 
-- cache @commits_cache_signatures_array do 
 
-  %table.commits.table.table-striped
-    %thead
-    %tbody
-      =render partial: 'commit_tr', collection: commits, as: :commit
+%table.commits.table.table-striped
+  %thead
+  %tbody
+    =render partial: 'commit_tr', collection: commits, as: :commit
 
 

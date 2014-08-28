@@ -3,7 +3,7 @@
 -#  See the LICENSE.txt file provided with this software.
 
 - cs = @execution_cache_signatures ? @execution_cache_signatures.select{|cs| cs.execution_id == execution.id}.first :  execution.execution_cache_signature
-- cache [cs.stats_signature || execution] do |cache_tag|
+- cache [cs.tasks_signature || execution.cache_signature] do |cache_tag|
   - _stat = execution.execution_stat
 
   %table.table.new-execution-stats

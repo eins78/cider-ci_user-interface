@@ -1,16 +1,7 @@
 source 'https://rubygems.org'
-#source 'http://torquebox.org/rubygems'
-#source 'http://torquebox.org/builds/1781/gem-repo/'
 
-gem 'activerecord-jdbcpostgresql-adapter',  platform: :jruby
 gem 'activerecord-jdbc-adapter', platform: :jruby
-
-gem 'pg', platform: 'mri'
-gem 'rails', '4.1.4'
-
-#gem 'torquebox-backstage', platform: :jruby, group: [:development]
-#gem 'twister', :path=> '/Users/thomas/Programming/ROR/twister'
-#gem 'rack-mini-profiler'
+gem 'activerecord-jdbcpostgresql-adapter',  platform: :jruby
 gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
 gem 'bunny', ">= 1.3"
@@ -29,9 +20,12 @@ gem 'jquery-ui-sass-rails'
 gem 'kaminari'
 gem 'kramdown'
 gem 'newrelic_rpm'
+gem 'pg', platform: 'mri'
 gem 'pry', group: [:development, :test]
 gem 'psych', platform: :mri # (j)psych is yet directly included in jruby, change when gemified
 gem 'puma'
+gem 'rack-mini-profiler'
+gem 'rails', '4.1.4'
 gem 'rails_config'
 gem 'rest-client'
 gem 'rspec-rails', group: [:development, :test]

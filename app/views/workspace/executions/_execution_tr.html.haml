@@ -3,9 +3,13 @@
 -#  See the LICENSE.txt file provided with this software.
 
 - execution ||= @execution
+
 - cs = @execution_cache_signatures ? @execution_cache_signatures.select{|cs| cs.execution_id == execution.id}.first :  execution.execution_cache_signature
 
-- cache [execution,cs.stats_signature,cs.commits_signature,cs.branches_signature,cs.tags_signature] do |cache_tag|
+- cache [execution.cache_signature,
+    cs.tasks_signature, cs.commits_signature,
+    cs.branches_signature, cs.repositories_signature ] do |cache_tag|
+ 
   - commits = execution.commits
 
   %tr.execution{class: bootstrap_color_for_state(execution.state)}

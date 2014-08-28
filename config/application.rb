@@ -51,7 +51,7 @@ module CiderCI
     config.generators.view_specs= false
     config.generators.helper_specs = false
 
-    config.active_record.timestamped_migrations = false
+    # config.active_record.timestamped_migrations = false
 
     config.log_tags = [:port, :remote_ip, lambda{|req| Time.now.strftime("%T")} ]
 

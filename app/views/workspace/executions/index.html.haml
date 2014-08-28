@@ -5,9 +5,14 @@
 - executions ||= @executions
 - link_params ||= @link_params
 
+%ol.breadcrumb 
+  = render partial: "/breadcrumbs/executions" 
 
-- cache @execution_cache_signatures.map{|cs| [@executions,cs.commits_signature,cs.branches_signature]} do |cache_tag|
- 
+
+- cache @execution_cache_signatures.map{|cs| [@executions,
+    cs.tasks_signature, cs.commits_signature,
+    cs.branches_signature, cs.repositories_signature]} do |cache_tag|
+
 
   #reload-page.executions-page{data: {cache_tag: cache_tag, reload_timeout: 5}}
 
@@ -16,7 +21,6 @@
 
     %h1 
       Executions
-
 
 
     .clearfix

@@ -4,7 +4,7 @@
 
 - execution ||= @execution
 - cs = execution.execution_cache_signature
-- cache [execution,cs.stats_signature,cs.trials_signature] do |cache_tag|
+- cache [execution.id,execution.updated_at,cs.tasks_signature] do |cache_tag|
   - speedup = (execution.accumulated_time/execution.duration).round(2) rescue nil
   - duration = execution.duration.round rescue nil
   - time = execution.accumulated_time.round rescue nil
